@@ -1,2 +1,2 @@
-docker exec -it goverment-agency-system_php_1 bash
+docker exec -it php_gas bash
 

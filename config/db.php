@@ -2,7 +2,7 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=mysql;dbname=gov_ag_system',
+    'dsn' => 'mysql:host=mysql_gas;dbname=gov_ag_system',
     'username' => 'user',
     'password' => 'password2019',
     'charset' => 'utf8',
