@@ -30,6 +30,13 @@
             [
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
+                    ['label' => 'Отделы', 'url' => ['/admin/branch/index']],
+                    ['label' => 'Сотрудники', 'url' => ['/admin/employee/index']],
+                    ['label' => 'Обратная связь', 'url' => ['/admin/feedback/index']],
+                    ['label' => 'Новости', 'url' => ['/admin/news/index']],
+                    ['label' => 'Категории', 'url' => ['/admin/newscategory/index']],
+                    ['label' => 'Пользователи', 'url' => ['/admin/user/index']],
+
                     ['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],

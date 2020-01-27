@@ -44,7 +44,7 @@ AppAsset::register($this);
             ['label' => 'Обратная связь', 'url' => ['/feedback/index']],
             ['label' => 'Новости', 'url' => ['/news/index']],
             ['label' => 'Категории', 'url' => ['/newscategory/index']],
-            ['label' => 'Пользователи', 'url' => ['/user/index']],
+//            ['label' => 'Пользователи', 'url' => ['/user/index']],
             Yii::$app->user->isGuest ? (
             ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
@@ -74,11 +74,11 @@ AppAsset::register($this);
 <footer class="footer">
 </body>
 <div class="container">
-    <p class="pull-left">&copy; Система инвентаризации <?= date('Y') ?></p>
+    <p class="pull-left">&copy; Сайт государственного учреждения <?= date('Y') ?></p>
     <p class="pull-right">
-        <?= Html::a(Yii::t('message', 'AdminPanel'), ['/admin']) ?>
+        <?= Html::a(Yii::t('message', 'AdminPanel' ), ['/admin']) ?>
+        GovernmentAgency
     </p>
-    <p class="pull-right"> GovernmentAgency</p>
 </div>
 </footer>
 
