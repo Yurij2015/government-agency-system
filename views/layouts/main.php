@@ -30,7 +30,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => "WIS",
+        'brandLabel' => "GovernmentAgency",
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -39,17 +39,12 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Приемка', 'url' => ['/acceptmaterial/index']],
+            ['label' => 'Отделы', 'url' => ['/branch/index']],
             ['label' => 'Сотрудники', 'url' => ['/employee/index']],
-            ['label' => 'Инвентаризация', 'url' => ['/inventarisation/index']],
-            ['label' => 'Материалы', 'url' => ['/material/index']],
-            ['label' => 'Категории', 'url' => ['/materialcategory/index']],
-            ['label' => 'Хранение', 'url' => ['/materialstorage/index']],
-            ['label' => 'Склады', 'url' => ['/storehouse/index']],
-            ['label' => 'Перевозчики', 'url' => ['/transporter/index']],
-            ['label' => 'Поставщики', 'url' => ['/vendor/index']],
-
-
+            ['label' => 'Обратная связь', 'url' => ['/feedback/index']],
+            ['label' => 'Новости', 'url' => ['/news/index']],
+            ['label' => 'Категории', 'url' => ['/newscategory/index']],
+            ['label' => 'Пользователи', 'url' => ['/user/index']],
             Yii::$app->user->isGuest ? (
             ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
@@ -80,8 +75,10 @@ AppAsset::register($this);
 </body>
 <div class="container">
     <p class="pull-left">&copy; Система инвентаризации <?= date('Y') ?></p>
-
-    <p class="pull-right">WIS</p>
+    <p class="pull-right">
+        <?= Html::a(Yii::t('message', 'AdminPanel'), ['/admin']) ?>
+    </p>
+    <p class="pull-right"> GovernmentAgency</p>
 </div>
 </footer>
 

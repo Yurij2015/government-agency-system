@@ -64,14 +64,19 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+    ],
+    'modules' => [
+        'admin' => [
+            'class' => 'app\module\adminmodule\Admin',
+            'layout' => 'main'
+        ],
     ],
     'params' => $params,
 ];
