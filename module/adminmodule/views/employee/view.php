@@ -32,8 +32,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'idemployee',
             'name',
             'phone',
-            'branch_idbranch',
-            'detail:ntext',
+            'branchIdbranch.name',
+//            'detail:ntext',
+            [
+                'attribute' => 'detail',
+                'value' => function ($data) {
+                    return Yii::$app->getSecurity()->decryptByPassword($data->detail, 'key8888');
+                },
+            ],
         ],
     ]) ?>
 

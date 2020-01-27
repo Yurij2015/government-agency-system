@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Employee;
-use app\models\EmployeeSearch;
+use app\models\EmloyeeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,7 +35,7 @@ class EmployeeController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new EmployeeSearch();
+        $searchModel = new EmloyeeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -122,6 +122,6 @@ class EmployeeController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        throw new NotFoundHttpException(Yii::t('message', 'The requested page does not exist.'));
     }
 }

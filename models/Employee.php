@@ -11,6 +11,7 @@ use Yii;
  * @property string|null $name
  * @property string|null $phone
  * @property int $branch_idbranch
+ * @property resource|null $detail
  *
  * @property Branch $branchIdbranch
  */
@@ -32,6 +33,7 @@ class Employee extends \yii\db\ActiveRecord
         return [
             [['branch_idbranch'], 'required'],
             [['branch_idbranch'], 'integer'],
+            [['detail'], 'string'],
             [['name'], 'string', 'max' => 130],
             [['phone'], 'string', 'max' => 15],
             [['branch_idbranch'], 'exist', 'skipOnError' => true, 'targetClass' => Branch::className(), 'targetAttribute' => ['branch_idbranch' => 'idbranch']],
@@ -44,10 +46,11 @@ class Employee extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idemployee' => Yii::t('app', 'Idemployee'),
-            'name' => Yii::t('app', 'Name'),
-            'phone' => Yii::t('app', 'Phone'),
-            'branch_idbranch' => Yii::t('app', 'Branch Idbranch'),
+            'idemployee' => Yii::t('message', 'Idemployee'),
+            'name' => Yii::t('message', 'Name'),
+            'phone' => Yii::t('message', 'Phone'),
+            'branch_idbranch' => Yii::t('message', 'Branch Idbranch'),
+            'detail' => Yii::t('message', 'Detail'),
         ];
     }
 

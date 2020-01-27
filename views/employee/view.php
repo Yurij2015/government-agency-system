@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Employee */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Employees'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('message', 'Employees'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->idemployee], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->idemployee], [
+        <?= Html::a(Yii::t('message', 'Update'), ['update', 'id' => $model->idemployee], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('message', 'Delete'), ['delete', 'id' => $model->idemployee], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                'confirm' => Yii::t('message', 'Are you sure you want to delete this item?'),
                 'method' => 'post',
             ],
         ]) ?>
@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'phone',
             'branch_idbranch',
+            'detail',
         ],
     ]) ?>
 

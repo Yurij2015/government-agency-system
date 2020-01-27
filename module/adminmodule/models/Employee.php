@@ -61,4 +61,11 @@ class Employee extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Branch::className(), ['idbranch' => 'branch_idbranch']);
     }
+
+    public function beforeSave($insert)
+    {
+        parent::beforeSave($insert);
+        $this->detail = Yii::$app->getSecurity()->encryptByPassword($this->detail, "key8888");
+        return true;
+    }
 }
