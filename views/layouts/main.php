@@ -44,7 +44,7 @@ AppAsset::register($this);
             ['label' => 'Обратная связь', 'url' => ['/feedback/index']],
             ['label' => 'Новости', 'url' => ['/news/index']],
             ['label' => 'Категории', 'url' => ['/newscategory/index']],
-//            ['label' => 'Пользователи', 'url' => ['/user/index']],
+            ['label' => 'Личный кабинет', 'url' => ['/user/index']],
             Yii::$app->user->isGuest ? (
             ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
