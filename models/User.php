@@ -141,4 +141,13 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('message', 'Username'),
+        ];
+    }
+
+
 }

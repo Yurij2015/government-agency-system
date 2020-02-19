@@ -44,7 +44,7 @@ AppAsset::register($this);
             ['label' => 'Обратная связь', 'url' => ['/feedback/index']],
             ['label' => 'Новости', 'url' => ['/news/index']],
             ['label' => 'Категории', 'url' => ['/newscategory/index']],
-            ['label' => 'Личный кабинет', 'url' => ['/user/index']],
+
             Yii::$app->user->isGuest ? (
             ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
@@ -56,8 +56,9 @@ AppAsset::register($this);
                 )
                 . Html::endForm()
                 . '</li>'
-            )
-        ],
+            ),
+            !Yii::$app->user->isGuest ?
+                ['label' => 'Личный кабинет', 'url' => ['/profile/index']] : ""],
     ]);
     NavBar::end();
     ?>
@@ -76,7 +77,7 @@ AppAsset::register($this);
 <div class="container">
     <p class="pull-left">&copy; Сайт государственного учреждения <?= date('Y') ?></p>
     <p class="pull-right">
-        <?= Html::a(Yii::t('message', 'AdminPanel' ), ['/admin']) ?>
+        <?= Html::a(Yii::t('message', 'AdminPanel'), ['/admin']) ?>
         GovernmentAgency
     </p>
 </div>
