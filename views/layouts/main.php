@@ -44,7 +44,6 @@ AppAsset::register($this);
             ['label' => 'Обратная связь', 'url' => ['/feedback/create']],
             ['label' => 'Новости', 'url' => ['/news/index']],
             ['label' => 'Категории', 'url' => ['/newscategory/index']],
-
             Yii::$app->user->isGuest ? (
             ['label' => 'Войти', 'url' => ['/site/login']]
             ) : (
@@ -57,6 +56,9 @@ AppAsset::register($this);
                 . Html::endForm()
                 . '</li>'
             ),
+            Yii::$app->user->isGuest ? (
+            ['label' => 'Регистрация', 'url' => ['/site/signup']]
+            ) : (""),
             !Yii::$app->user->isGuest ?
                 ['label' => 'Личный кабинет', 'url' => ['/profile/index']] : ""],
     ]);
