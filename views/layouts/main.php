@@ -41,7 +41,7 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Отделы', 'url' => ['/branch/index']],
             ['label' => 'Сотрудники', 'url' => ['/employee/index']],
-            ['label' => 'Обратная связь', 'url' => ['/feedback/index']],
+            ['label' => 'Обратная связь', 'url' => ['/feedback/create']],
             ['label' => 'Новости', 'url' => ['/news/index']],
             ['label' => 'Категории', 'url' => ['/newscategory/index']],
 

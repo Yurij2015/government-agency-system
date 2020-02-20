@@ -15,24 +15,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a(Yii::t('message', 'Update'), ['update', 'id' => $model->idemployee], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('message', 'Delete'), ['delete', 'id' => $model->idemployee], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => Yii::t('message', 'Are you sure you want to delete this item?'),
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idemployee',
+//            'idemployee',
             'name',
             'phone',
-            'branch_idbranch',
+//            'branch_idbranch',
+            'branchIdbranch.name',
             'detail',
         ],
     ]) ?>

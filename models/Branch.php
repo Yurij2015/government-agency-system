@@ -40,9 +40,9 @@ class Branch extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idbranch' => Yii::t('app', 'Idbranch'),
-            'name' => Yii::t('app', 'Name'),
-            'description' => Yii::t('app', 'Description'),
+            'idbranch' => Yii::t('message', 'Idbranch'),
+            'name' => Yii::t('message', 'NameB'),
+            'description' => Yii::t('message', 'Description'),
         ];
     }
 

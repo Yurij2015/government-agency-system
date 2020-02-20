@@ -7,16 +7,12 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BranchSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Branches');
+$this->title = Yii::t('message', 'Branches');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="branch-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a(Yii::t('app', 'Create Branch'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
@@ -26,11 +22,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'idbranch',
+//            'idbranch',
             'name',
             'description',
 
-            ['class' => 'yii\grid\ActionColumn'],
+//            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 

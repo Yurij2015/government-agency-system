@@ -6,7 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\module\adminmodule\models\Feedback */
 
-$this->title = $model->idfeedback;
+$this->title = "Номер вопроса: " . $model->idfeedback;
+
 $this->params['breadcrumbs'][] = ['label' => Yii::t('message', 'Feedbacks'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -30,7 +31,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'idfeedback',
-            'user_id',
+            'user.username',
+            'user.email',
             'content',
         ],
     ]) ?>
