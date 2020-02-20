@@ -29,8 +29,8 @@ class Feedback extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idfeedback', 'user_id'], 'required'],
-            [['idfeedback', 'user_id'], 'integer'],
+//            [['idfeedback', 'user_id'], 'required'],
+//            [['idfeedback', 'user_id'], 'integer'],
             [['content'], 'string', 'max' => 245],
             [['idfeedback'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],

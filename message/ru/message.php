@@ -56,4 +56,5 @@ return [
     'Remember Me' => 'Запомнить меня',
     'Update Employee: {name}' => '',
     'TITLE_PROFILE' =>'Личный кабинет',
+    'User ID' => 'Пользователь'
 ];

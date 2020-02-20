@@ -1,5 +1,7 @@
 <?php
 
+use yii\db\Query;
+use yii\grid\GridView;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
@@ -20,5 +22,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'email',
         ],
     ]) ?>
+    <h3>История обращений в организацию:</h3>
+    <?php
+    $rows = (new Query())
+        ->select(['content'])
+        ->from('feedback')
+        ->where(['user_id' => 1])
+        ->limit(10);
+    foreach ($rows->each() as $users) {
+        echo $users['content'] . "<br>";
+    }
+    ?>
+
 
 </div>
