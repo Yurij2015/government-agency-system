@@ -42,7 +42,7 @@ class Newscategory extends \yii\db\ActiveRecord
     {
         return [
             'idnewscategory' => Yii::t('message', 'Idnewscategory'),
-            'name' => Yii::t('message', 'Name'),
+            'name' => Yii::t('message', 'NameK'),
             'description' => Yii::t('message', 'Description'),
         ];
     }

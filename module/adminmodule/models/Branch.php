@@ -41,7 +41,7 @@ class Branch extends \yii\db\ActiveRecord
     {
         return [
             'idbranch' => Yii::t('message', 'Idbranch'),
-            'name' => Yii::t('message', 'Name'),
+            'name' => Yii::t('message', 'NameB'),
             'description' => Yii::t('message', 'Description'),
         ];
     }

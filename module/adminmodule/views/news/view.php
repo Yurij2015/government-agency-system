@@ -6,15 +6,12 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\module\adminmodule\models\News */
 
-$this->title = $model->idnews;
+$this->title = $model->newsname;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('message', 'News'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="news-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
         <?= Html::a(Yii::t('message', 'Update'), ['update', 'id' => $model->idnews], ['class' => 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('message', 'Delete'), ['delete', 'id' => $model->idnews], [
@@ -32,11 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'idnews',
             'newsname',
             'content:ntext',
-            'created_at',
-            'updated_at',
-            'updated_by',
-            'created_by',
-            'newscategory_idnewscategory',
+//            'created_at',
+//            'updated_at',
+//            'updated_by',
+//            'created_by',
+                'newscategoryIdnewscategory.name',
+//            'newscategory_idnewscategory',
         ],
     ]) ?>
 
