@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Хост: db
--- Время создания: Янв 27 2020 г., 19:06
--- Версия сервера: 5.7.28
+-- Время создания: Фев 20 2020 г., 14:18
+-- Версия сервера: 5.7.29
 -- Версия PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -34,6 +34,13 @@ CREATE TABLE `auth_assignment` (
   `created_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Дамп данных таблицы `auth_assignment`
+--
+
+INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
+('admin', '1', 1582205680);
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +56,13 @@ CREATE TABLE `auth_item` (
   `created_at` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `auth_item`
+--
+
+INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES
+('admin', 1, 'Администратор', NULL, NULL, 1582205250, 1582205250);
 
 -- --------------------------------------------------------
 
@@ -130,9 +144,23 @@ INSERT INTO `employee` (`idemployee`, `name`, `phone`, `branch_idbranch`, `detai
 
 CREATE TABLE `feedback` (
   `idfeedback` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `content` varchar(245) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `user_id` int(11) DEFAULT NULL,
+  `content` varchar(245) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `feedback`
+--
+
+INSERT INTO `feedback` (`idfeedback`, `user_id`, `content`, `answer`) VALUES
+(1, 1, 'Как я могу связаться с руководителем организации?', 'Нужно записаться на прием!'),
+(2, 1, 'Сколько стоит переоформить земельный участок? И что для этого нужно?', 'Для этого Вам необходимо обратиться в отдел, который заниматеся этими вопросами!'),
+(3, 1, 'How mach?', 'Много'),
+(4, NULL, 'How mach? dsds', NULL),
+(5, 1, 'Что случилось?', 'Ничего'),
+(6, NULL, 'Где это?', NULL),
+(7, 2, 'Как связаться с главным?', 'Через сайт');
 
 -- --------------------------------------------------------
 
@@ -151,6 +179,14 @@ CREATE TABLE `news` (
   `newscategory_idnewscategory` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Дамп данных таблицы `news`
+--
+
+INSERT INTO `news` (`idnews`, `newsname`, `content`, `created_at`, `updated_at`, `updated_by`, `created_by`, `newscategory_idnewscategory`) VALUES
+(1, 'Лучшее образование ', 'Как обеспечить лучшее образование', NULL, NULL, NULL, NULL, 2),
+(2, 'jkjkj', 'jkkjkjkj', NULL, NULL, NULL, NULL, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -162,6 +198,14 @@ CREATE TABLE `newscategory` (
   `name` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Дамп данных таблицы `newscategory`
+--
+
+INSERT INTO `newscategory` (`idnewscategory`, `name`, `description`) VALUES
+(1, 'Деятельность учреждения', 'Все о деятельности учреждения'),
+(2, 'Новости образования', 'Все новости образования и учебных учреждений');
 
 -- --------------------------------------------------------
 
@@ -186,7 +230,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'FRW4r4Id3qexZpgPUqmt04m-stEtc4De', '$2y$13$obUbx8Pl/yfYQYu1x0Q47eGXczJ6Chh4e.X64g9rhxSaWxjiT5A2i', NULL, 'admin@wis.loc', 10, 1580126064, 1580126064);
+(1, 'admin', 'FRW4r4Id3qexZpgPUqmt04m-stEtc4De', '$2y$13$obUbx8Pl/yfYQYu1x0Q47eGXczJ6Chh4e.X64g9rhxSaWxjiT5A2i', NULL, 'admin@wis.loc', 10, 1580126064, 1580126064),
+(2, 'Yurij', 'jsvI0PCdhJfy2_uGQVfANvKWVwmHZQdN', '$2y$13$nsdz6G7nC3jgGK62ihYwH.lHvM4TaiARoDarCaZHAu3/Enr0vguE.', NULL, 'yurij@mail.ru', 10, 1582204587, 1582204587);
 
 --
 -- Индексы сохранённых таблиц
@@ -281,22 +326,28 @@ ALTER TABLE `employee`
   MODIFY `idemployee` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT для таблицы `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `idfeedback` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT для таблицы `news`
 --
 ALTER TABLE `news`
-  MODIFY `idnews` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idnews` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `newscategory`
 --
 ALTER TABLE `newscategory`
-  MODIFY `idnewscategory` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idnewscategory` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
