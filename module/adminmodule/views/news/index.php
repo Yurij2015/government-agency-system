@@ -12,8 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="news-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
         <?= Html::a(Yii::t('message', 'Create News'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
@@ -29,8 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'idnews',
             'newsname',
             'content:ntext',
-            'created_at',
-            'updated_at',
+//            'created_at',
+//            'updated_at',
             //'updated_by',
             //'created_by',
             //'newscategory_idnewscategory',

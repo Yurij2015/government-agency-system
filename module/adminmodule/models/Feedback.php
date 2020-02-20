@@ -31,7 +31,7 @@ class Feedback extends \yii\db\ActiveRecord
         return [
             [['idfeedback', 'user_id'], 'required'],
             [['idfeedback', 'user_id'], 'integer'],
-            [['content'], 'string', 'max' => 245],
+            [['content', 'answer'], 'string', 'max' => 245],
             [['idfeedback'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
@@ -46,6 +46,7 @@ class Feedback extends \yii\db\ActiveRecord
             'idfeedback' => Yii::t('message', 'Idfeedback'),
             'user_id' => Yii::t('message', 'User ID'),
             'content' => Yii::t('message', 'Content'),
+            'answer' => Yii::t('message', 'Answer'),
         ];
     }
 

@@ -12,9 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="newscategory-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
         <?= Html::a(Yii::t('message', 'Update'), ['update', 'id' => $model->idnewscategory], ['class' => 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('message', 'Delete'), ['delete', 'id' => $model->idnewscategory], [
@@ -29,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idnewscategory',
+//            'idnewscategory',
             'name',
             'description',
         ],

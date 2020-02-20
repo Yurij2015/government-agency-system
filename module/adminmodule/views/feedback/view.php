@@ -13,9 +13,6 @@ $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="feedback-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
         <?= Html::a(Yii::t('message', 'Update'), ['update', 'id' => $model->idfeedback], ['class' => 'btn btn-primary']) ?>
         <?= Html::a(Yii::t('message', 'Delete'), ['delete', 'id' => $model->idfeedback], [
@@ -30,10 +27,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idfeedback',
+//            'idfeedback',
             'user.username',
             'user.email',
             'content',
+            'answer',
         ],
     ]) ?>
 

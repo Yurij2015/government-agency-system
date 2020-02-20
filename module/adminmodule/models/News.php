@@ -54,7 +54,7 @@ class News extends \yii\db\ActiveRecord
         return [
             'idnews' => Yii::t('message', 'Idnews'),
             'newsname' => Yii::t('message', 'Newsname'),
-            'content' => Yii::t('message', 'Content'),
+            'content' => Yii::t('message', 'ContentN'),
             'created_at' => Yii::t('message', 'Created At'),
             'updated_at' => Yii::t('message', 'Updated At'),
             'updated_by' => Yii::t('message', 'Updated By'),
