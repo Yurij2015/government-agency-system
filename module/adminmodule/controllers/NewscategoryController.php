@@ -26,7 +26,8 @@ class NewscategoryController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'roles' => ['@'],
+//                        'roles' => ['@'],
+                        'roles' => ['admin'],
                     ],
                 ],
             ],

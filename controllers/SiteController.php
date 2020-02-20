@@ -168,4 +168,18 @@ class SiteController extends Controller
 //        }
 //    }
 
+//    public function actionAddRole()
+//    {
+//        $role = Yii::$app->authManager->createRole('admin');
+//        $role->description = 'Администратор';
+//        Yii::$app->authManager->add($role);
+//    }
+
+//    public function actionAssignRole()
+//    {
+//        $userRole = Yii::$app->authManager->getRole('admin');
+//        Yii::$app->authManager->assign($userRole, Yii::$app->user->getId());
+//    }
+
+
 }
